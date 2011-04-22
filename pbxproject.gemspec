@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.authors = ["Mikko Kokkonen"]
   s.date = %q{2011-04-22}
   s.default_executable = %q{pbxproject}
-  s.description = %q{TODO: longer description of your gem}
+  s.description = %q{makes managing XCode 4 project files as easy as modifying ruby classes.}
   s.email = %q{mikko.kokkonen@me.com}
   s.executables = ["pbxproject"]
   s.extra_rdoc_files = [
@@ -27,9 +27,15 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "bin/pbxproject",
+    "data.pbxproj",
     "examples/project.pbxproj",
+    "examples/project.pbxproj.new",
     "lib/pbxproject.rb",
-    "lib/pbxtypes.rb",
+    "lib/pbxproject/cli.rb",
+    "lib/pbxproject/pbxproject.rb",
+    "lib/pbxproject/pbxtypes.rb",
+    "pbxproject.gemspec",
     "spec/pbxproject_spec.rb",
     "spec/spec_helper.rb"
   ]
@@ -37,7 +43,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.6.2}
-  s.summary = %q{TODO: one-line summary of your gem}
+  s.summary = %q{XCode 4 project management}
   s.test_files = [
     "spec/pbxproject_spec.rb",
     "spec/spec_helper.rb"
