@@ -7,35 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-C0D293A3135FD66E001979A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D293A2135FD66E001979A0 /* UIKit.framework */; 		};
-C0D293A5135FD66E001979A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D293A4135FD66E001979A0 /* Foundation.framework */; 		};
-C0D293A7135FD66E001979A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D293A6135FD66E001979A0 /* CoreGraphics.framework */; 		};
-C0D293AD135FD66E001979A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0D293AB135FD66E001979A0 /* InfoPlist.strings */; 		};
-C0D293B0135FD66E001979A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D293AF135FD66E001979A0 /* main.m */; 		};
-C0D293B3135FD66E001979A0 /* FooAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D293B2135FD66E001979A0 /* FooAppDelegate.m */; 		};
-C0D293B7135FD66F001979A0 /* FooAppDelegate_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D293B6135FD66F001979A0 /* FooAppDelegate_iPhone.m */; 		};
-C0D293BA135FD66F001979A0 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0D293B8135FD66F001979A0 /* MainWindow_iPhone.xib */; 		};
-C0D293BE135FD66F001979A0 /* FooAppDelegate_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D293BD135FD66F001979A0 /* FooAppDelegate_iPad.m */; 		};
-C0D293C1135FD66F001979A0 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0D293BF135FD66F001979A0 /* MainWindow_iPad.xib */; 		};
+		C0D293A3135FD66E001979A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D293A2135FD66E001979A0 /* UIKit.framework */; };
+		C0D293A5135FD66E001979A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D293A4135FD66E001979A0 /* Foundation.framework */; };
+		C0D293A7135FD66E001979A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D293A6135FD66E001979A0 /* CoreGraphics.framework */; };
+		C0D293AD135FD66E001979A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0D293AB135FD66E001979A0 /* InfoPlist.strings */; };
+		C0D293B0135FD66E001979A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D293AF135FD66E001979A0 /* main.m */; };
+		C0D293B3135FD66E001979A0 /* FooAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D293B2135FD66E001979A0 /* FooAppDelegate.m */; };
+		C0D293B7135FD66F001979A0 /* FooAppDelegate_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D293B6135FD66F001979A0 /* FooAppDelegate_iPhone.m */; };
+		C0D293BA135FD66F001979A0 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0D293B8135FD66F001979A0 /* MainWindow_iPhone.xib */; };
+		C0D293BE135FD66F001979A0 /* FooAppDelegate_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D293BD135FD66F001979A0 /* FooAppDelegate_iPad.m */; };
+		C0D293C1135FD66F001979A0 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0D293BF135FD66F001979A0 /* MainWindow_iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-C0D2939E135FD66E001979A0 /* Foo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foo.app; sourceTree = BUILT_PRODUCTS_DIR; 		};
-C0D293A2135FD66E001979A0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; 		};
-C0D293A4135FD66E001979A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; 		};
-C0D293A6135FD66E001979A0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; 		};
-C0D293AA135FD66E001979A0 /* Foo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Foo-Info.plist"; sourceTree = "<group>"; 		};
-C0D293AC135FD66E001979A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; 		};
-C0D293AE135FD66E001979A0 /* Foo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Foo-Prefix.pch"; sourceTree = "<group>"; 		};
-C0D293AF135FD66E001979A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; 		};
-C0D293B1135FD66E001979A0 /* FooAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FooAppDelegate.h; sourceTree = "<group>"; 		};
-C0D293B2135FD66E001979A0 /* FooAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FooAppDelegate.m; sourceTree = "<group>"; 		};
-C0D293B5135FD66F001979A0 /* FooAppDelegate_iPhone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FooAppDelegate_iPhone.h; path = iPhone/FooAppDelegate_iPhone.h; sourceTree = "<group>"; 		};
-C0D293B6135FD66F001979A0 /* FooAppDelegate_iPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FooAppDelegate_iPhone.m; path = iPhone/FooAppDelegate_iPhone.m; sourceTree = "<group>"; 		};
-C0D293B9135FD66F001979A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPhone/en.lproj/MainWindow_iPhone.xib; sourceTree = "<group>"; 		};
-C0D293BC135FD66F001979A0 /* FooAppDelegate_iPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FooAppDelegate_iPad.h; path = iPad/FooAppDelegate_iPad.h; sourceTree = "<group>"; 		};
-C0D293BD135FD66F001979A0 /* FooAppDelegate_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FooAppDelegate_iPad.m; path = iPad/FooAppDelegate_iPad.m; sourceTree = "<group>"; 		};
-C0D293C0135FD66F001979A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPad/en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; 		};
+		C0D2939E135FD66E001979A0 /* Foo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0D293A2135FD66E001979A0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C0D293A4135FD66E001979A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C0D293A6135FD66E001979A0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C0D293AA135FD66E001979A0 /* Foo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Foo-Info.plist"; sourceTree = "<group>"; };
+		C0D293AC135FD66E001979A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C0D293AE135FD66E001979A0 /* Foo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Foo-Prefix.pch"; sourceTree = "<group>"; };
+		C0D293AF135FD66E001979A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C0D293B1135FD66E001979A0 /* FooAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FooAppDelegate.h; sourceTree = "<group>"; };
+		C0D293B2135FD66E001979A0 /* FooAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FooAppDelegate.m; sourceTree = "<group>"; };
+		C0D293B5135FD66F001979A0 /* FooAppDelegate_iPhone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FooAppDelegate_iPhone.h; path = iPhone/FooAppDelegate_iPhone.h; sourceTree = "<group>"; };
+		C0D293B6135FD66F001979A0 /* FooAppDelegate_iPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FooAppDelegate_iPhone.m; path = iPhone/FooAppDelegate_iPhone.m; sourceTree = "<group>"; };
+		C0D293B9135FD66F001979A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPhone/en.lproj/MainWindow_iPhone.xib; sourceTree = "<group>"; };
+		C0D293BC135FD66F001979A0 /* FooAppDelegate_iPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FooAppDelegate_iPad.h; path = iPad/FooAppDelegate_iPad.h; sourceTree = "<group>"; };
+		C0D293BD135FD66F001979A0 /* FooAppDelegate_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FooAppDelegate_iPad.m; path = iPad/FooAppDelegate_iPad.m; sourceTree = "<group>"; };
+		C0D293C0135FD66F001979A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPad/en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

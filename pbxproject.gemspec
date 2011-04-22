@@ -42,6 +42,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/mikian/pbxproject}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
+  s.requirements = ["thor, if CLI wanted"]
   s.rubygems_version = %q{1.6.2}
   s.summary = %q{XCode 4 project management}
   s.test_files = [

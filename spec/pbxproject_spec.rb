@@ -16,7 +16,7 @@ describe "parsing" do
     @pbx = PBXProject::PBXProject.new :file => 'examples/project.pbxproj'
   end
   
-  it "should be succesful" do
+  it "should be successful" do
     @pbx.parse.should eql true
   end
   
@@ -183,5 +183,30 @@ describe "PBX format" do
   it "PBXProject" do
     pbx = @pbx.to_pbx
     # pbx.should == @expected.join("")
+  end
+end
+
+describe "save" do
+  before :all do
+    @expected = []
+    File.open('examples/project.pbxproj', 'r').each_line do |line|
+      @expected.push line.chomp!
+    end
+  end
+  
+  before :each do
+    @pbx = PBXProject::PBXProject.new :file => 'examples/project.pbxproj'
+    @pbx.parse
+  end
+  
+  it "to file" do
+    @pbx.write_to :file => 'examples/project.pbxproj.new'
+    
+    wrote = []
+    File.open('examples/project.pbxproj.new', 'r').each_line do |line|
+      wrote.push line.chomp!
+    end
+    
+    wrote.should == @expected
   end
 end

@@ -250,9 +250,20 @@ module PBXProject
     
       pbx += "\t};\n"
       pbx += "\trootObject = %s;\n" % @rootObject.to_pbx
-      pbx += "}"
+      pbx += "}\n"
     
       pbx
     end
+
+    def write_to args = {}
+      # Get our serialized format first
+      pbx = self.to_pbx
+      
+      # Open file
+      File.open(args[:file], 'w') {|f| f.write(pbx) }
+      
+      args[:file]
+    end
+    
   end
 end
