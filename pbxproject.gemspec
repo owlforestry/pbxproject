@@ -5,18 +5,18 @@
 
 Gem::Specification.new do |s|
   s.name = %q{pbxproject}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mikko Kokkonen"]
-  s.date = %q{2011-04-22}
+  s.date = %q{2011-04-23}
   s.default_executable = %q{pbxproject}
   s.description = %q{makes managing XCode 4 project files as easy as modifying ruby classes.}
   s.email = %q{mikko.kokkonen@me.com}
   s.executables = ["pbxproject"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.rdoc"
+    "README.md"
   ]
   s.files = [
     ".document",
@@ -24,11 +24,10 @@ Gem::Specification.new do |s|
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
-    "README.rdoc",
+    "README.md",
     "Rakefile",
     "VERSION",
     "bin/pbxproject",
-    "data.pbxproj",
     "examples/project.pbxproj",
     "examples/project.pbxproj.new",
     "lib/pbxproject.rb",
