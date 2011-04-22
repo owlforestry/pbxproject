@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "pbxproject"
   gem.homepage = "http://github.com/mikian/pbxproject"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{XCode 4 project management}
+  gem.description = %Q{makes managing XCode 4 project files as easy as modifying ruby classes.}
   gem.email = "mikko.kokkonen@me.com"
   gem.authors = ["Mikko Kokkonen"]
   gem.executables = ["pbxproject"]
