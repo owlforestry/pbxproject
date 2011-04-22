@@ -201,7 +201,8 @@ class PBXProject
 
       arr.each do |item|
         args.each do |k,v|
-          if (item.instance_variable_get("@#{k}").value == v)
+          key = item.instance_variable_get("@#{k}")
+          if (key && (key == v || (key.kind_of?(PBXTypes::BasicValue) && key.value == v)))
             return item
           end
         end
@@ -211,4 +212,43 @@ class PBXProject
     nil
   end
   
+  def add_item item, position = -1
+    type = item.class.name.split('::').last || ''
+    
+    # Ensure that we have array
+    if (@sections[type].nil?)
+      @sections[type] = []
+    end
+    
+    @sections[type].insert(position, item)
+    
+    item.guid
+  end
+  
+  def to_pbx
+    ind = 2
+    pbx = ''
+    
+    pbx += "// !$*UTF8*$!\n{"
+    pbx += "\tarchiveVersion = %s;\n" % @archiveVersion.to_pbx
+    pbx += "\tclasses = {\n\t};\n"
+    pbx += "\tobjectVersion = %s;\n" % @objectVersion.to_pbx
+    pbx += "\tobjects = {\n"
+    
+    @sections.each do |type, val|
+      pbx += "/* Begin %s section */\n" % type
+
+      val.each do |item|
+        pbx += item.to_pbx ind
+      end
+      
+      pbx += "/* End %s section */\n" % type
+    end
+    
+    pbx += "\t};\n"
+    pbx += "\trootObject = %s;\n" % @rootObject.to_pbx
+    pbx += "}"
+    
+    pbx
+  end
 end

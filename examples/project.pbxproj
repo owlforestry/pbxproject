@@ -253,6 +253,15 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/iOS/Ads\"",
+					"\"$(SRCROOT)/iOS/Ads/Google AdMob\"",
+					"\"$(SRCROOT)/iOS/Ads/Greystripe\"",
+					"\"$(SRCROOT)/iOS/libs/FlurryLib\"",
+					"\"$(SRCROOT)/iOS/Ads/InMobi iOS SDK Bundle\"",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
