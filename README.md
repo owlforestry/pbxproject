@@ -28,7 +28,8 @@ After this using pbxproject files are as easy as managing ruby objects:
 	target = pbx.find_item :name => "MyGreatGame", :type => PBXProject::PBXTypes::PBXNativeTarget
 	
 	# create new shell script
-	scrt = PBXProject::PBXTypes::PBXShellScriptBuildPhase :shellPath => '/bin/sh', :shellScript => "\"echo 'Hello world!' > foo.log\""
+	scrt = PBXProject::PBXTypes::PBXShellScriptBuildPhase :shellPath => '/bin/sh',
+		:shellScript => "\"echo 'Hello world!' > foo.log\""
 	
 	# add it to target's build phase (by default to last item)
 	target.add_build_phase scrt
