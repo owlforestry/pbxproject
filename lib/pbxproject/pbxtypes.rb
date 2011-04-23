@@ -24,7 +24,7 @@ module PBXProject
       attr_accessor :guid, :isa, :comment
 
       def initialize args = {}
-        @isa = basic_value(self.class.name)
+        @isa = basic_value(self.class.name.split("::").last)
         @guid = hashify(self)
       
         args.each do |k,v|

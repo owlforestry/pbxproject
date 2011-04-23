@@ -10,7 +10,21 @@ module PBXProject
       @filename = args[:file]
     
       # initialize our class
-      @sections = {}
+      # make sure that our sections are on proper order
+      @sections = {
+        :PBXBuildFile => nil,
+        :PBXFileReference => nil,
+        :PBXFrameworksBuildPhase => nil,
+        :PBXGroup => nil,
+        :PBXNativeTarget => nil,
+        :PBXProject => nil,
+        :PBXResourcesBuildPhase => nil,
+        :PBXShellScriptBuildPhase => nil,
+        :PBXSourcesBuildPhase => nil,
+        :PBXVariantGroup => nil,
+        :XCBuildConfiguration => nil,
+        :XCConfigurationList => nil
+      }
     
       # and set that we're ready for parsing
       @state = :ready
@@ -36,7 +50,7 @@ module PBXProject
       # Read our file
       pbx.each_line do |line|
         if (line_num == 0 && !line.match(Regexp.new(Regexp.escape('// !$*UTF8*$!'))))
-          raise "Unkown file format"
+          raise "Unknown file format"
         end
       
         # Main level Attributes
@@ -201,11 +215,15 @@ module PBXProject
       args.delete(:type)
       @sections.each do |t, arr|
         next unless t == type_name
-
+        
         arr.each do |item|
           args.each do |k,v|
-            key = item.instance_variable_get("@#{k}")
-            if (key && (key == v || (key.kind_of?(PBXTypes::BasicValue) && key.value == v)))
+            val = item.instance_variable_get("@#{k}")
+            val = (val.respond_to?(:value) ? val.value : val)
+            
+            next unless val
+            
+            if (val.match(Regexp.new("\"?#{v}\"?")))
               return item
             end
           end
@@ -239,6 +257,7 @@ module PBXProject
       pbx += "\tobjects = {\n"
     
       @sections.each do |type, val|
+        next if val.nil?  # skip section if it's empty
         pbx += "\n/* Begin %s section */\n" % type
 
         val.each do |item|
