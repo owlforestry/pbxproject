@@ -13,6 +13,7 @@ module PBXProject
       # make sure that our sections are on proper order
       @sections = {
         :PBXBuildFile => nil,
+        :PBXContainerItemProxy => nil,
         :PBXFileReference => nil,
         :PBXFrameworksBuildPhase => nil,
         :PBXGroup => nil,
@@ -21,9 +22,11 @@ module PBXProject
         :PBXResourcesBuildPhase => nil,
         :PBXShellScriptBuildPhase => nil,
         :PBXSourcesBuildPhase => nil,
+        :PBXTargetDependency => nil,
         :PBXVariantGroup => nil,
         :XCBuildConfiguration => nil,
-        :XCConfigurationList => nil
+        :XCConfigurationList => nil,
+        :XCVersionGroup => nil
       }
     
       # and set that we're ready for parsing

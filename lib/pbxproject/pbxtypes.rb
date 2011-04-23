@@ -137,69 +137,7 @@ module PBXProject
             puts "WHAT? #{field.class}"
             puts "#{field}"
           end
-        
-          # case self.instance_variable_get("@#{field}").class.name
-          # when "Hash"
-          #   h = self.instance_variable_get("@#{field}")
-          #   if (h.value)
-          #     # We have value-comment hash
-          #     h.comment = " /* #{h.comment} */" if h.comment != nil
-          # 
-          #     ind.times{print"\t"};
-          #     pbx += sprintf "%s = %s%s;", field, h[:value], h[:comment]
-          #     pbx += "\n" unless @format == :oneline
-          #   else
-          #     # We have dictionary
-          #     ind.times{print"\t"};
-          #     pbx += sprintf "%s = {", field
-          #     pbx += "\n" unless @format == :oneline
-          #     
-          #     ind += 1
-          #     h.each do |name, d|
-          #       case d.class.name
-          #       when "Hash"
-          #         ind.times{print"\t"}
-          #         d[:comment] = " /* #{d[:comment]} */" if d[:comment] != nil
-          #         pbx += sprintf "%s = %s%s;", name, d[:value], d[:comment]
-          #         pbx += "\n" unless @format == :oneline
-          #         
-          #       when "Array"
-          #         ind.times{print"\t"}
-          #         pbx += "#{name} = ("
-          #         pbx += "\n" unless @format == :oneline
-          #         
-          #         ind += 1
-          #         d.each do |r|
-          #           ind.times{print"\t"}
-          #           r[:comment] = " /* #{r[:comment]} */" if r[:comment] != nil
-          #           pbx += sprintf "%s%s,", r[:name], r[:item], r[:comment]
-          #           pbx += "\n" unless @format == :oneline
-          #           
-          #         end
-          #         ind -= 1
-          #         ind.times{print"\t"}
-          #         pbx += ");"
-          #         pbx += "\n" unless @format == :oneline
-          #         
-          #       end
-          #     end
-          #     ind -= 1
-          #     ind.times{print"\t"}; puts "};"
-          #   end
-          # when "Array"
-          #   a = self.instance_variable_get("@#{field}")
-          #   ind.times{print"\t"};
-          #   pbx += sprintf "%s = (%s", field, pbxformat
-          #   ind += 1
-          #   a.each do |r|
-          #     ind.times{print"\t"}
-          #     r[:comment] = " /* #{r[:comment]} */" if r[:comment] != nil
-          # 
-          #     printf "%s%s,\n", r[:item], r[:comment]
-          #   end
-          #   ind -= 1
-          #   ind.times{print"\t"}; print ");\n"
-          # end
+
         end
         ind -= 1
 
@@ -217,33 +155,16 @@ module PBXProject
     class PBXBuildFile < ISAType
       has_fields :isa, :fileRef
       has_format :oneline
-    
-      # def to_pbx(ind)
-      #   print "#{@guid}"
-      #   print " /* #{@comment} */" if @comment
-      #   print " = {isa = #{@isa}; "
-      #   if (@fileRef.kind_of?(Hash))
-      #     print "fileRef = #{@fileRef[:value]} /* #{@fileRef[:comment]} */"
-      #   else
-      #     print "fileRef = #{@fileRef}"
-      #   end
-      #   puts "; };"
-      # end
     end
-
+    
+    class PBXContainerItemProxy < ISAType
+      has_fields :isa, :containerPortal, :proxyType, :remoteGlobalIDString, :remoteInfo
+      has_format :multiline
+    end
+    
     class PBXFileReference < ISAType
       has_fields :isa, :fileEncoding, :explicitFileType, :lastKnownFileType, :includeInIndex, :name, :path, :sourceTree
       has_format :oneline
-    
-      # def to_pbx(ind)
-      #   print "#{@guid}"
-      #   print " /* #{@comment} */" if @comment
-      #   print " = {"
-      #   ["isa", "fileEncoding", "explicitFileType", "lastKnownFileType", "includeInIndex", "name", "path", "sourceTree"].each do |var|
-      #     printf "%s = %s; ", var, self.instance_variable_get("@#{var}") if self.instance_variable_get("@#{var}") != nil
-      #   end
-      #   puts "};"
-      # end
     end
 
     class PBXFrameworksBuildPhase < ISAType
@@ -307,6 +228,11 @@ module PBXProject
       has_format :multiline
     end
 
+    class PBXTargetDependency < ISAType
+      has_fields :isa, :target, :targetProxy
+      has_format :multiline
+    end
+    
     class PBXVariantGroup < ISAType
       has_fields :isa, :children, :name, :sourceTree
       has_format :multiline
@@ -321,6 +247,10 @@ module PBXProject
       has_fields :isa, :buildConfigurations, :defaultConfigurationIsVisible, :defaultConfigurationName
       has_format :multiline
     end
-  
+    
+    class XCVersionGroup < ISAType
+      has_fields :isa, :children, :currentVersion, :path, :sourceTree, :versionGroupType
+      has_format :multiline
+    end
   end
 end
