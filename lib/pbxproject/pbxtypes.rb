@@ -249,7 +249,7 @@ module PBXProject
     end
     
     class XCVersionGroup < ISAType
-      has_fields :isa, :children, :currentVersion, :path, :sourceTree, :versionGroupType
+      has_fields :isa, :children, :currentVersion, :name, :path, :sourceTree, :versionGroupType
       has_format :multiline
     end
   end
