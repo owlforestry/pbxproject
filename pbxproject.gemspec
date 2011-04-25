@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{pbxproject}
-  s.version = "0.1.3"
+  s.version = "0.1.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mikko Kokkonen"]
-  s.date = %q{2011-04-23}
+  s.date = %q{2011-04-25}
   s.default_executable = %q{pbxproject}
   s.description = %q{makes managing XCode 4 project files as easy as modifying ruby classes.}
   s.email = %q{mikko.kokkonen@me.com}
