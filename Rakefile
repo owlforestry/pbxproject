@@ -13,7 +13,7 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "pbxproject"
-  gem.homepage = "http://github.com/mikian/pbxproject"
+  gem.homepage = "http://github.com/owl-forestry/pbxproject"
   gem.license = "MIT"
   gem.summary = %Q{XCode 4 project management}
   gem.description = %Q{makes managing XCode 4 project files as easy as modifying ruby classes.}
