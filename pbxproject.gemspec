@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{pbxproject}
-  s.version = "0.1.4"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mikko Kokkonen"]
-  s.date = %q{2011-04-25}
+  s.date = %q{2011-05-14}
   s.default_executable = %q{pbxproject}
   s.description = %q{makes managing XCode 4 project files as easy as modifying ruby classes.}
   s.email = %q{mikko.kokkonen@me.com}
@@ -38,7 +38,7 @@ Gem::Specification.new do |s|
     "spec/pbxproject_spec.rb",
     "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/mikian/pbxproject}
+  s.homepage = %q{http://github.com/owl-forestry/pbxproject}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.requirements = ["thor, if CLI wanted"]
