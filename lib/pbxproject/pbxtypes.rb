@@ -51,6 +51,10 @@ module PBXProject
           define_method(f) do
             instance_variable_get("@#{f}")
           end
+          
+          define_method("#{f}=") do |val|
+            instance_variable_set("@#{f}", val)
+          end
         end
 
         define_method("pbxfields") do

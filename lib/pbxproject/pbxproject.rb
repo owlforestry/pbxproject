@@ -1,6 +1,13 @@
 module PBXProject
+  # PBXProject class is main class for whole project file.
+  # Initializer takes one named argument, `file` which defines pbxproject
+  # file to be parsed.
   class PBXProject
-    attr_reader :filename, :state
+    # Filename of pbxproj file
+    attr_reader :filename
+    # Current state of parser, either nil, :ready, :parsed
+    attr_reader :state
+    
     attr_accessor :archiveVersion, :objectVersion, :sections
   
     def initialize(args = {})
@@ -218,6 +225,9 @@ module PBXProject
       args.delete(:type)
       @sections.each do |t, arr|
         next unless t == type_name
+        
+        # Return all if we searched only for item type
+        return arr if args.count == 0
         
         arr.each do |item|
           args.each do |k,v|
