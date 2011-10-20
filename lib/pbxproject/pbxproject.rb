@@ -19,21 +19,21 @@ module PBXProject
       # initialize our class
       # make sure that our sections are on proper order
       @sections = {
-        :PBXBuildFile => nil,
-        :PBXContainerItemProxy => nil,
-        :PBXFileReference => nil,
-        :PBXFrameworksBuildPhase => nil,
-        :PBXGroup => nil,
-        :PBXNativeTarget => nil,
-        :PBXProject => nil,
-        :PBXResourcesBuildPhase => nil,
-        :PBXShellScriptBuildPhase => nil,
-        :PBXSourcesBuildPhase => nil,
-        :PBXTargetDependency => nil,
-        :PBXVariantGroup => nil,
-        :XCBuildConfiguration => nil,
-        :XCConfigurationList => nil,
-        :XCVersionGroup => nil
+        "PBXBuildFile" => nil,
+        "PBXContainerItemProxy" => nil,
+        "PBXFileReference" => nil,
+        "PBXFrameworksBuildPhase" => nil,
+        "PBXGroup" => nil,
+        "PBXNativeTarget" => nil,
+        "PBXProject" => nil,
+        "PBXResourcesBuildPhase" => nil,
+        "PBXShellScriptBuildPhase" => nil,
+        "PBXSourcesBuildPhase" => nil,
+        "PBXTargetDependency" => nil,
+        "PBXVariantGroup" => nil,
+        "XCBuildConfiguration" => nil,
+        "XCConfigurationList" => nil,
+        "XCVersionGroup" => nil
       }
     
       # and set that we're ready for parsing
@@ -142,17 +142,17 @@ module PBXProject
         end
       
         # Next line in multiline
-        if (item && m = line.match(/\s+(.*?) = (.*)( \/\* (.*) \*\/)?;/))
+        if (item && m = line.match(/^\s*(.*?) = (.*?)(?: \/\* (.*) \*\/)?;$/))
           if (group_name.count < 3)
-            # i = { :value => m[2], :comment => m[4] }
-            item.instance_variable_set("@#{m[1]}", PBXTypes::BasicValue.new(:value => m[2], :comment => m[4]))
+            # i = { :value => m[2], :comment => m[3] }
+            item.instance_variable_set("@#{m[1]}", PBXTypes::BasicValue.new(:value => m[2], :comment => m[3]))
           else
             grp = item.instance_variable_get("@#{group_name.last}")
             if (!grp.kind_of?(Hash))
               grp = {}
             end
-            # grp[m[1]] = { :value => m[2], :comment => m[4] }
-            grp[m[1]] = PBXTypes::BasicValue.new :value => m[2], :comment => m[4]
+            # grp[m[1]] = { :value => m[2], :comment => m[3] }
+            grp[m[1]] = PBXTypes::BasicValue.new :value => m[2], :comment => m[3]
             item.instance_variable_set("@#{group_name.last}", grp)
           end
         
@@ -250,10 +250,7 @@ module PBXProject
       type = item.class.name.split('::').last || ''
     
       # Ensure that we have array
-      if (@sections[type].nil?)
-        @sections[type] = []
-      end
-    
+      @sections[type] ||= []
       @sections[type].insert(position, item)
     
       item.guid
