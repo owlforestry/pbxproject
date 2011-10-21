@@ -19,21 +19,21 @@ module PBXProject
       # initialize our class
       # make sure that our sections are on proper order
       @sections = {
-        "PBXBuildFile" => nil,
-        "PBXContainerItemProxy" => nil,
-        "PBXFileReference" => nil,
-        "PBXFrameworksBuildPhase" => nil,
-        "PBXGroup" => nil,
-        "PBXNativeTarget" => nil,
-        "PBXProject" => nil,
-        "PBXResourcesBuildPhase" => nil,
-        "PBXShellScriptBuildPhase" => nil,
-        "PBXSourcesBuildPhase" => nil,
-        "PBXTargetDependency" => nil,
-        "PBXVariantGroup" => nil,
-        "XCBuildConfiguration" => nil,
-        "XCConfigurationList" => nil,
-        "XCVersionGroup" => nil
+        # "PBXBuildFile" => nil,
+        # "PBXContainerItemProxy" => nil,
+        # "PBXFileReference" => nil,
+        # "PBXFrameworksBuildPhase" => nil,
+        # "PBXGroup" => nil,
+        # "PBXNativeTarget" => nil,
+        # "PBXProject" => nil,
+        # "PBXResourcesBuildPhase" => nil,
+        # "PBXShellScriptBuildPhase" => nil,
+        # "PBXSourcesBuildPhase" => nil,
+        # "PBXTargetDependency" => nil,
+        # "PBXVariantGroup" => nil,
+        # "XCBuildConfiguration" => nil,
+        # "XCConfigurationList" => nil,
+        # "XCVersionGroup" => nil
       }
     
       # and set that we're ready for parsing

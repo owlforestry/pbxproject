@@ -210,7 +210,7 @@ module PBXProject
     end
 
     class PBXShellScriptBuildPhase < ISAType
-      has_fields :isa, :buildActionMask, :files, :inputPaths, :outputPaths, :runOnlyForDeploymentPostprocessing,
+      has_fields :isa, :buildActionMask, :files, :inputPaths, :name, :outputPaths, :runOnlyForDeploymentPostprocessing,
         :shellPath, :shellScript, :showEnvVarsInLog
       has_format :multiline
 
