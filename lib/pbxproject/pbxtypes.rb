@@ -161,6 +161,11 @@ module PBXProject
       has_format :oneline
     end
     
+    class PBXReferenceProxy < ISAType
+      has_fields :isa, :fileType, :path, :remoteRef, :sourceTree
+      has_format :multiline
+    end
+    
     class PBXContainerItemProxy < ISAType
       has_fields :isa, :containerPortal, :proxyType, :remoteGlobalIDString, :remoteInfo
       has_format :multiline
