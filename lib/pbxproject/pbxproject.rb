@@ -20,6 +20,7 @@ module PBXProject
       # make sure that our sections are on proper order
       @sections = {
         # "PBXBuildFile" => nil,
+        # "PBXReferenceProxy" => nil,
         # "PBXContainerItemProxy" => nil,
         # "PBXFileReference" => nil,
         # "PBXFrameworksBuildPhase" => nil,
