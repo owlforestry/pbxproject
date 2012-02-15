@@ -165,7 +165,17 @@ module PBXProject
       has_fields :isa, :fileType, :path, :remoteRef, :sourceTree
       has_format :multiline
     end
-    
+
+    class PBXHeadersBuildPhase < ISAType
+      has_fields :isa, :buildActionMask, :files, :runOnlyForDeploymentPostprocessing
+      has_format :multiline
+    end
+
+    class PBXLegacyTarget < ISAType
+      has_fields :isa, :buildArgumentsString, :buildConfigurationList, :buildPhases, :buildToolPath, :dependencies, :name, :passBuildSettingsInEnvironment, :productName
+      has_format :multiline
+    end
+
     class PBXContainerItemProxy < ISAType
       has_fields :isa, :containerPortal, :proxyType, :remoteGlobalIDString, :remoteInfo
       has_format :multiline

@@ -25,6 +25,8 @@ module PBXProject
         # "PBXFileReference" => nil,
         # "PBXFrameworksBuildPhase" => nil,
         # "PBXGroup" => nil,
+        # "PBXHeadersBuildPhase" => nil,
+        # "PBSLegacyTarget" => nil,
         # "PBXNativeTarget" => nil,
         # "PBXProject" => nil,
         # "PBXResourcesBuildPhase" => nil,
