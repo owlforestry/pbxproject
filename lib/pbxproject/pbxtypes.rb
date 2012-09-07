@@ -157,7 +157,7 @@ module PBXProject
     end
   
     class PBXBuildFile < ISAType
-      has_fields :isa, :fileRef
+      has_fields :isa, :fileRef, :settings
       has_format :oneline
     end
     

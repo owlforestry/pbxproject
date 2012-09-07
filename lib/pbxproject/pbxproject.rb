@@ -100,7 +100,7 @@ module PBXProject
         end
       
         # One line section data, simple. huh?
-        if (section_type && group_name.count < 3 && m = line.match(/\s+(.*?) (\/\* (.*?) \*\/ )?= \{(.*?)\};/))
+        if (section_type && group_name.count < 3 && m = line.match(/\s+(.*?) (\/\* (.*?) \*\/ )?= \{(.*)\};/))
           begin
             # cls = PBXProject::PBXProject::const_get(section_type)
             # item = cls.new
@@ -108,12 +108,18 @@ module PBXProject
         
             item.guid = m[1]
             item.comment = m[3]
-            m[4].scan(/(.*?) = (.*?)( \/\* (.*) \*\/)?; ?/).each do |v|
+            # m[4].scan(/(.*?) = (.*?)( \/\* (.*) \*\/)?; ?/).each do |v|
+            # 1: name
+            # 2: value
+            # 3: /* comment */
+            # 4: comment
+            m[4].scan(/(\S*?) = (\s*?(.*?)(?:(?={){[^}]*}|(?: \/\* (.*?) \*\/)?(?=;)))/).each do |v|
+              # require 'pry';binding.pry if v[3]
               if (v[3])
                 # d = { :value => v[1], :comment => v[3]}
-                item.instance_variable_set("@#{v[0]}", PBXTypes::BasicValue.new(:value => v[1], :comment => v[3]))
+                item.instance_variable_set("@#{v[0]}", PBXTypes::BasicValue.new(:value => v[2], :comment => v[3]))
               else
-                item.instance_variable_set("@#{v[0]}", v[1])
+                item.instance_variable_set("@#{v[0]}", v[1][/^{/] ? v[1] : v[2])
               end
             end
         
