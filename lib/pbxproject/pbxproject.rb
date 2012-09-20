@@ -114,7 +114,6 @@ module PBXProject
             # 3: /* comment */
             # 4: comment
             m[4].scan(/(\S*?) = (\s*?(.*?)(?:(?={){[^}]*}|(?: \/\* (.*?) \*\/)?(?=;)))/).each do |v|
-              # require 'pry';binding.pry if v[3]
               if (v[3])
                 # d = { :value => v[1], :comment => v[3]}
                 item.instance_variable_set("@#{v[0]}", PBXTypes::BasicValue.new(:value => v[2], :comment => v[3]))
